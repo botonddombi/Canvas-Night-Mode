@@ -1,6 +1,6 @@
 var intervals = {
 	checkLoginState : 12000,
-	doCompleteReset : 840001,
+	doCompleteReset : 15001,
 	doRefresh : 120000,
 	tryLogin : 3000,
 };
@@ -12,12 +12,37 @@ var Background = (function(){
 
 	var savedVariables = {};
 
-	var loggedIn = false;
+	var loggedIn = false,
+		frame = 1; 
 
 	var resetDataInterval,
 		refreshDataInterval,
 		loginInterval,
-		actInterval;
+		actInterval,
+		frameInterval;
+
+	var animateIn = function(){
+		frame = 0;
+		frameInterval = setInterval(function(){
+			frame++;
+			if(frame > 81){
+				frame = 81;
+				clearInterval(frameInterval);
+			}
+			chrome.browserAction.setIcon({path: 'art/favicon/fav_' + frame + '.png'});
+		}, 33.36);
+	}
+
+	var animateOut = function(){
+		frameInterval = setInterval(function(){
+			frame--;
+			if(frame < 1){
+				frame = 1;
+				clearInterval(frameInterval);
+			}
+			chrome.browserAction.setIcon({path: 'art/favicon/fav_' + frame + '.png'});
+		}, 33.36);
+	}
 
 	var notification = function(title, message, stay, href, list){
 		chrome.storage.sync.get(['sound', 'notifications'], function( obj ){
@@ -59,7 +84,7 @@ var Background = (function(){
 		});
 	}
 
-	var pushNotificiations = function(){
+	var pushNotifications = function(){
 		var diff = oldUserdata.assignments - userdata.assignments;
 		if(diff != 0 && savedVariables.assignments.length){
 			if(diff > 0){
@@ -180,6 +205,7 @@ var Background = (function(){
 	}
 
 	var getUrl = function(dataret, url){
+		let prevState = loggedIn;
 		loggedIn = false;
 
 		$.ajax({
@@ -191,14 +217,17 @@ var Background = (function(){
 					console.log("Succesfully querying %s.", url);
 					loggedIn = true;
 					dataret.data = data;
+					animateIn();
 				}
 			},
 			error : function(){
+				animateOut();
 				console.log('Error during ajax load.');
 			}
 		});
 
 		if(!loggedIn){
+			animateOut();
 			console.log("Starting login checks from now.");
 
 			clearInterval(resetDataInterval);
@@ -214,6 +243,7 @@ var Background = (function(){
 						if(!data.includes('id="login_form"')){
 							loggedIn = true;
 							console.log("User finally logged in!");
+							animateIn();
 						}
 						else{
 							console.log("%s. try: still not logged in.", index);
@@ -226,6 +256,7 @@ var Background = (function(){
 				if(loggedIn){
 					clearInterval(loginInterval);
 					initialize();
+					animateIn();
 				}
 				index++;
 			}, intervals.tryLogin);
@@ -288,9 +319,9 @@ var Background = (function(){
 		}
 		console.log("The user has %s announcements on the dashboard.", announcements ? announcements : "no");
 
+		savedVariables.announcements = new Array();
 		if(announcements){
 			var annContent = tmp.data.match(/\/courses\/\d*\/announcements\/\d*.*\s*.*\s*.*\s*.*/g);
-			savedVariables.announcements = new Array();
 			for(let i = 0; i < annContent.length; i++){
 				savedVariables.announcements[i] = {};
 				savedVariables.announcements[i].name = annContent[i].match(/fake-link">.*</g)[0].split(">")[1].slice(0, -1);
@@ -315,9 +346,9 @@ var Background = (function(){
 		}
 		console.log("The user has %s assignment notifications on the dashboard.", assignments ? assignments : "no");
 
+		savedVariables.assignments = new Array();
 		if(assignments){
 			var assignContent = tmp.data.match(/\/courses\/\d*\/assignments\/\d*.*\s*.*\s*.*\s*.*/g);
-			savedVariables.assignments = new Array();
 			for(let i = 0; i < assignContent.length; i++){
 				savedVariables.assignments[i] = {};
 				savedVariables.assignments[i].name = assignContent[i].match(/fake-link">.*</g)[0].split(">")[1].slice(0, -1);
@@ -359,7 +390,7 @@ var Background = (function(){
 		console.log("Refreshing data.");
 		try{
 			beginRefreshData();
-			pushNotificiations();
+			pushNotifications();
 			setUserData();
 		}
 		catch(e){
@@ -369,6 +400,7 @@ var Background = (function(){
 
 	var initialize = function(){
 		console.log("==>STARTING<==");
+
 		chrome.storage.sync.get(['userdata'], function( obj ){
 			var when;
 
