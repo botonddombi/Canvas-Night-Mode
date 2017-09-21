@@ -1,6 +1,6 @@
 var intervals = {
 	checkLoginState : 12000,
-	doCompleteReset : 15001,
+	doCompleteReset : 840001,
 	doRefresh : 120000,
 	tryLogin : 3000,
 };
