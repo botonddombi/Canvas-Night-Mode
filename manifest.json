@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+
+  "name": "Canvas Night Mode",
+  "description": "Boruljon hát sötétség e kegyetlen világra.",
+  "version": "1.0.5",
+
+  "browser_action": {
+    "default_icon": "art/favicon.png",
+    "default_popup": "html/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://canvas.cs.ubbcluj.ro/*"],
+      "js": ["js/jquery.js", "js/canvas.js"],
+      "run_at": "document_start"
+    }
+  ],
+
+  "web_accessible_resources": [
+    "css/canvas.css",
+    "art/lg.mp4",
+    "css/always.css",
+    "art/x.png",
+    "art/notif.mp3",
+    "art/logo.png"
+  ],
+
+  "permissions": [
+    "tabs",
+    "notifications",
+    "background",
+    "activeTab",
+    "storage",
+    "https://ajax.googleapis.com/"
+  ],
+
+  "background":{
+    "scripts": [
+      "js/jquery.js",
+      "js/background.js"
+    ]
+  }
+}

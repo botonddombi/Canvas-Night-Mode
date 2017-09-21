@@ -1,0 +1,65 @@
+body{
+	width:240px;
+	height:140px;
+	background:rgb(30,30,30);
+	color:rgb(245,245,245);
+	padding:10px;
+	transition: all 0.3s;
+}
+
+body.lightmode{
+	background: none;
+	color:black;
+}
+
+.option{
+	display: flex;
+    align-items: center;
+    height:20px;
+}
+
+label{
+	min-width:60px;
+	margin-right:10px;
+}
+
+.switch{
+	width:30px;
+	height: 12px;
+	border-radius:7px;
+	background:rgb(210,210,210);
+	transition: all 0.6s;
+	cursor: pointer;
+}
+
+.sound{
+	display: none;
+}
+
+select{
+	width:123px;
+}
+
+body:not(.lightmode) select{
+	background:rgb(40,40,40);
+	color:white;
+}
+
+.switch div{
+	position:relative;
+	left:0px;
+	width:12px;
+	height:12px;
+	border-radius:7px;
+	background:white;
+	box-shadow: 0 0 5px rgba(0,0,0,.1);
+	transition: all 0.3s;
+}
+
+.switch.on{
+	background:rgb(57, 215, 54);
+}
+
+.switch.on div{
+	left:18px;
+}

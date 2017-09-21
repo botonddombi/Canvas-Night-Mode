@@ -1,0 +1,720 @@
+body{
+	background: rgb(20,20,20) !important;
+}
+
+#header{
+	background: rgb(28, 28, 28) !important;
+	border-bottom: 1px solid black !important;
+}
+
+#identity{
+	background: rgb(51, 51, 51) !important;
+	box-shadow: 0 0 10px rgba(0,0,0,0.4) !important;
+}
+
+#right-side{
+	color:white !important;
+}
+
+#right-side h2, #right-side .h2 {
+	color: rgb(220, 220, 220) !important;
+}
+
+a,
+.right-side-list li em,
+.stream_header,
+.list-view a,
+.stream-details tr,
+.menu-item .menu-item-drop li,
+.course_details tr td
+{
+	transition: all 0.3s !important;
+}
+
+a{
+	color: rgb(20, 176, 255) !important;
+}
+
+a:hover{
+	color: rgb(40, 196, 255) !important;
+}
+
+.right-side-list li em{
+	color: rgb(210, 210, 210) !important;
+}
+
+.right-side-list li a:hover em,
+.right-side-list li a:focus em
+{
+	color: rgb(220, 220, 220) !important;
+}
+
+.standalone-icon:before{
+	color: rgb(40, 196, 255) !important;
+}
+
+#main{
+	color:white !important;
+	background: rgb(60, 60, 60) !important;
+	border:none !important;
+	border-right: 1px solid black !important;
+	border-bottom: 1px solid black !important;
+}
+
+.stream_header:hover {
+    background: rgba(255,255,255,0.1) !important;
+}
+
+.stream_header:active{
+	background: rgba(0,0,0,0.15) !important;
+}
+
+.stream_header + .details_container{
+	transition: all 0.6s !important;
+	display: block !important;
+	overflow:hidden !important;
+	height:0px !important;
+}
+
+.recent_activity .image-block-image i:before{
+	color: white !important;
+}
+
+#breadcrumbs {
+    border-bottom: 1px solid black !important;
+    background-color: rgb(40,40,40) !important;
+}
+
+.list-view>header, .list-view #section-tabs-header{
+	color: white !important;
+    background: rgb(80,80,80) !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid black !important;
+}
+
+.list-view>header:hover, .list-view>header:active, .list-view>header.active, .list-view>header.disabled, .list-view>header[disabled], .list-view #section-tabs-header:hover, .list-view #section-tabs-header:active, .list-view #section-tabs-header.active, .list-view #section-tabs-header.disabled, .list-view #section-tabs-header[disabled]{
+	color: white !important;
+    background: rgb(80,80,80) !important;
+}
+
+.list-view a.active{
+    background: rgb(60,60,60) !important;
+    color: white !important;
+}
+
+.list-view a.active:hover{
+    background: rgb(80,80,80) !important;
+    color: white !important;
+}
+
+.list-view a:hover{
+    background: rgba(255,255,255,0.1) !important;
+    color: white !important;
+}
+
+.list-view>ul>li>a, .list-view>nav>ul>li>a{
+	color: rgba(255,255,255,0.5) !important;
+}
+
+.list-view>ul>li>a:hover, .list-view>nav>ul>li>a:hover{
+	background: rgba(255,255,255,0.1) !important;
+    color: white !important;
+}
+
+.stream-details tr:hover{
+	background: rgba(255,255,255,0.1) !important;
+}
+
+.stream-details tr a{
+	outline:0 !important;
+}
+
+#wrapper-container{
+	overflow:visible !important;
+}
+
+.close.ignore-item{
+	animation: none !important;
+}
+
+.close {
+    opacity: 0 !important;
+    transition: opacity 0.3s !important;
+    color:white !important;
+}
+
+.close:hover{
+	opacity:0.9 !important;
+	color:white !important;
+}
+
+.toggle-details{
+	transition: none !important;
+}
+
+.right-side-list.to-do-list li a.disable_item_link{
+	color:white !important;
+}
+
+.right-side-list.to-do-list li:hover a.disable_item_link{
+	color:rgba(255,255,255,0.8) !important;
+}
+
+#header-logo{
+	filter: grayscale(100%) !important;
+}
+
+#header-logo:hover{
+	transform: scale(1.1, 1.1) !important;
+	filter: grayscale(0%) !important;
+}
+
+#header-logo:active{
+	transition: all 0.1s !important;
+	transform: scale(0.9, 0.9) !important;
+}
+
+.menu-item .menu-item-drop{
+	background: rgb(100,100,100) !important;
+	color:white !important;
+	left: 0 !important;
+	height: 0px !important;
+	transition: height 0.3s !important;
+}
+
+.menu-item.hover .menu-item-title,
+.menu-item.hover-pending .menu-item-title{
+	background: rgb(100,100,100) !important;
+	color:white !important;
+}
+
+.menu-item .menu-item-drop .menu-item-drop-column .menu-item-heading{
+	color:white !important;
+}
+
+#menu_enrollments .customListOpen{
+	color: rgb(20, 176, 255) !important;
+}
+
+.menu-item .menu-item-drop li .name{
+	color: rgb(40, 196, 255) !important;
+}
+
+.menu-item .menu-item-drop li:hover {
+    background-color: rgba(255,255,255,0.1) !important;
+}
+
+.menu-item .menu-item-drop li:active {
+    background-color: rgba(0,0,0,0.1) !important;
+}
+
+.menu-item .menu-item-drop li .secondary-right,
+.menu-item .menu-item-drop li .subtitle,
+.menu-item .menu-item-drop li:hover .secondary-right,
+.menu-item .menu-item-drop li:hover .subtitle
+{
+	color: rgba(255,255,255,0.89) !important;
+}
+
+strong{
+	color:rgb(210,210,210) !important;
+}
+
+.course_details tr:hover td {
+	background:rgba(255,255,255,0.1) !important;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"], input[type="month"],
+input[type="time"], input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+.uneditable-input{
+	background-color: rgb(30,30,30) !important;
+    border: 1px solid black !important;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.75) !important;
+}
+
+select{
+	color:rgb(240,240,240) !important;
+}
+
+.btn,
+.ui-button{
+	color: rgb(240,240,240) !important;
+    text-shadow: none !important;
+    background-color: rgb(20,20,20) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(60,60,60)), to(rgb(20,20,20))) !important;
+    background-image: -webkit-linear-gradient(top, rgb(60,60,60), rgb(20,20,20)) !important;
+    background-image: linear-gradient(to bottom, rgb(60,60,60), rgb(20,20,20)) !important;
+}
+
+.btn.active, .active.ui-button, .btn:active, .ui-button:active, .ui-button.ui-state-active, .ui-progressbar .ui-button.ui-widget-header, .ui-button.ui-state-disabled{
+	background-color: rgb(20,20,20) !important;
+}
+
+.btn:hover, .ui-button:hover, .ui-button.ui-state-hover{
+	color: rgb(255,255,255) !important;
+	background-color: rgb(20,20,20) !important;
+	background-position: 0 -30px !important;
+}
+
+.discussionTopicIndexList .discussion-topic:nth-child(odd) {
+	background: rgb(50,50,50) !important;
+}
+
+.discussionTopicIndexList .discussion-topic:nth-child(odd):hover{
+	background: rgb(65,65,65) !important;
+}
+
+.discussionTopicIndexList .discussion-topic{
+	box-shadow: 0 0 12px rgba(0,0,0,0.3) inset !important;
+	background: rgb(60,60,60) !important;
+	border-top: 1px solid rgb(30,30,30) !important;
+	transition: all 0.3s !important;
+}
+
+.discussionTopicIndexList .discussion-topic:hover{
+	background: rgb(75,75,75) !important;
+}
+
+
+.discussion-pubdate, .discussionTopicIndexList .discussion-summary, .discussionTopicIndexList .discussion-unread-container, .discussionTopicIndexList .discussion-last-reply, .discussionTopicIndexList .discussion-info-icons{
+	color: rgb(210,210,210) !important;
+}
+
+.toolbarView,
+.topic .entry-content{
+	background: none !important;
+}
+
+.toolbarView .headerBar{
+	border-bottom: solid 1px black !important;
+    min-height: 57px !important;
+}
+
+.toolbarView#discussion-toolbar .headerBar {
+    background: rgb(50,50,50) !important;
+    border-top: 1px solid black !important;
+}
+
+.discussion-section a {
+    color: rgb(20, 176, 255) !important;
+}
+
+.discussion_entry>.discussion-entry-reply-area{
+	border: 1px solid rgb(20,20,20) !important;
+}
+
+table.course-list-table .course-list-table-row{
+	background-color: rgb(50,50,50) !important;
+	transition: all 0.3s !important;
+}
+
+table.course-list-table .course-list-table-row:hover{
+	background-color: rgba(255,255,255,0.1) !important;
+}
+
+.table-bordered th, .table-bordered td{
+	border-left: 1px solid rgba(0,0,0,0.4) !important;
+}
+
+.table-bordered{
+	border: 1px solid black !important;
+}
+
+.table th, .table td {
+	border-top: 1px solid black !important;
+}
+
+table.course-list-table td.course-list-star-column {
+	text-shadow: none !important;
+	cursor: pointer !important;
+}
+
+.discussion-entry-reply-area{
+	background: rgb(50,50,50) !important;
+}
+
+.discussion-reply-box{
+	border: 1px solid black !important;
+	background-color: rgb(20,20,20) !important;
+}
+
+.defaultSkin table.mceLayout tr.mceFirst td.mceToolbar,
+.defaultSkin table.mceLayout td.mceIframeContainer
+{
+	border: 1px solid black !important;
+}
+
+iframe #tinymce{
+	background: rgb(20,20,20) !important;
+}
+
+.discussion_entry{
+	background: rgb(40,40,40) !important;
+}
+
+.discussion-entries .entry{
+	background: rgb(30,30,30) !important;
+	border: 1px solid black !important;
+	box-shadow: 0px 1px 0px rgb(40,40,40) !important;
+}
+
+.entry>.bottom-reply-with-box .discussion-entry-reply-area{
+	border-top: 1px solid black !important;
+}
+
+.topic>.discussion-entry-reply-area{
+	margin:10px !important;
+}
+
+.read .discussion-read-state {
+    background: rgb(40,40,40) !important;
+}
+
+.header-bar,
+.item-group-container{
+	background-color: rgb(60,60,60) !important;
+	border: none !important;
+}
+
+.item-group-container .item-group-condensed{
+	border-bottom: 1px dashed rgb(40,40,40) !important;
+}
+
+.item-group-condensed .ig-list li:first-child .ig-row, .item-group-condensed .ig-list li:first-of-type .ig-row, .item-group-condensed .first_visible .ig-row{
+	border-top: 1px solid black !important;
+}
+
+.item-group-condensed .ig-list li:last-child .ig-row, .item-group-condensed .ig-list li:last-of-type .ig-row, .item-group-condensed .last_visible .ig-row{
+	border-bottom: 1px solid black !important;
+}
+
+.item-group-condensed .ig-row{
+	border-bottom: 1px solid black !important;
+	background: rgb(40,40,40) !important;
+}
+
+.ig-list .ig-row a.ig-title{
+	color:white !important;
+}
+
+.ig-list .ig-row{
+	border-left: 1px solid black !important;
+	box-shadow: 0 1px 0 rgb(70,70,70) !important;
+}
+
+.ig-list .ig-row:hover{
+	background: rgba(255,255,255,0.1) !important;
+	transition: all 0.3s !important;
+}
+
+body.with_item_groups #main{
+	background-color: rgb(60,60,60) !important;
+}
+
+#grades_summary thead th{
+	background-color: rgb(30,30,30) !important;
+}
+
+#grades_summary tr>*{
+	transition: all 0.3s !important;
+	background-color: rgb(50,50,50) !important;
+	border-top: 2px solid rgb(25,25,25) !important;
+}
+
+#grades_summary tr.assignment_graded>*{
+	background-color: rgb(60,60,60) !important;
+}
+
+#grades_summary tr.editable:hover>*{
+	background-color: rgb(65,65,65) !important;
+}
+
+#grades_summary tr.assignment_graded:hover>*{
+	background-color: rgb(75,75,75) !important;
+}
+
+#grades_summary tr.group_total td, #grades_summary tr.group_total th[scope=row]{
+	background-color: rgb(40,40,40) !important;
+}
+
+#grades_summary tr.final_grade>*{
+	background-color: rgb(30,30,30) !important;
+}
+
+#grades_summary{
+	border-bottom:1px solid black !important;
+}
+
+table.summary thead th, table.summary caption{
+	background-color: rgb(30,30,30) !important;
+	border-top: 1px solid black !important;
+}
+
+#right-side table.summary td, #right-side table.summary tbody th{
+	background-color: rgb(70,70,70) !important;
+    color: white !important;
+}
+
+table.summary td, table.summary tbody th{
+	border-top: 1px solid rgb(40,40,40) !important;
+}
+
+.discussion-collections{
+	background: none !important;
+}
+
+.discussion-list{
+	box-shadow: inset 0 0 10px rgba(0,0,0,0.4) !important;
+	border-bottom: 2px dashed rgb(30,30,30) !important;
+}
+
+.discussion{
+	background: rgb(35,35,35) !important;
+	border:1px solid black !important;
+	transition: all 0.3s !important;
+}
+
+.discussion:hover{
+	background: rgb(55,55,55) !important;
+}
+
+.item-group{
+	background-color: rgb(50,50,50) !important;
+}
+
+.discussion{
+	color: white !important;
+}
+
+.discussion-entries .entry .entry{
+	border-top: solid 1px rgb(20,20,20) !important;
+}
+
+#content h2{
+	color:white !important;
+}
+
+#newlogo{
+	position: absolute !important;
+	bottom:11px !important;
+	width:135px !important;
+	height:26px !important;
+	right:26px !important;
+	overflow: hidden !important;
+}
+
+#vid{
+	width:136px !important;
+	height: 144px !important;
+	position: relative !important;
+    top: -59px !important;
+}
+
+#group_categories_tabs>.tab-panel{
+	border-top: 1px solid black !important;
+}
+
+.ui-tabs .ui-tabs-panel{
+	background: rgb(60,60,60) !important;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+	background: rgb(60,60,60) !important;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a{
+	color: white !important;
+}
+
+.ui-tabs .ui-tabs-nav li a{
+	text-shadow: 0 1px 0 rgba(0,0,0, 0.5) !important;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+	border-color:black !important;
+}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited{
+	color:white !important;
+}
+
+.ui-state-default, .ui-widget-header .ui-state-default{
+	border: 1px solid black !important;
+	background-image: -webkit-linear-gradient(top, rgb(40,40,40), rgb(30,30,30)) !important;
+    background-image: linear-gradient(to bottom, rgb(40,40,40), rgb(30,30,30)) !important;
+    box-shadow: inset 0 1px 0 rgba(0,0,0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.ui-widget-content{
+	color:white !important;
+}
+
+.table-striped,
+.table-striped>thead{
+	border: 1px solid black !important;
+}
+
+.table>thead{
+	background: rgb(30,30,30) !important;
+}
+
+.table-striped>tbody>tr td{
+	background: rgb(50,50,50) !important;
+}
+
+.table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th{
+	background: rgb(40,40,40) !important;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th, .table-hover tbody tr.table-hover-row td, .table-hover tbody tr.table-hover-row th{
+	background: rgb(60,60,60) !important;
+	transition: all 0.3s !important;
+}
+
+#files_structure,
+#files_content{
+	border: 1px solid black !important;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.4) !important;
+}
+
+ul.instTree li.node.active-node>.text{
+	background-color: rgb(30,30,30) !important;
+    padding: 5px !important;
+}
+
+.content_panel{
+	border-bottom: 1px solid black !important;
+	background-color: rgb(30,30,30) !important;
+}
+
+.files_content .folder_item,
+ul.instTree li.node>.text{
+	transition: all 0.3s !important;
+}
+
+ul.instTree li.leaf:hover,
+ul.instTree li.node>.text:hover, ul.instTree li li:focus,
+.files_content .folder_item.folder_item_hover{
+	background-color: rgb(45,45,45) !important;
+}
+
+#syllabus thead th{
+	background: rgb(20,20,20) !important;
+	border-bottom: 1px solid black !important;
+}
+#syllabus tr.date table.detail_list td.not_last,
+#syllabus tr.date.date_passed td, #syllabus tr.date.date_passed th{
+	background-color: rgb(40,40,40) !important;
+	border-bottom: 1px solid black !important;
+}
+
+#syllabus tr.date td, #syllabus tr.date th,
+#syllabus tr.date td.details .dates{
+	color:white !important;
+}
+
+.mini-cal-header{
+	background: rgb(40,40,40) !important;
+    border-radius: 3px !important;
+}
+
+.toolbar{
+	border: 1px solid black !important;
+	background-image: -webkit-linear-gradient(top, rgb(50,50,50), rgb(40,40,40)) !important;
+    background-image: linear-gradient(to bottom, rgb(50,50,50), rgb(40,40,40)) !important;
+    box-shadow: inset 0 1px 0 rgba(0,0,0, 0.75) !important;
+}
+
+.quiz-header{
+	border-bottom: 1px solid black !important;
+}
+
+.quiz-submission, .question_editing{
+	background: rgb(40,40,40) !important;
+    border: 1px solid black !important;
+}
+
+.alert{
+	text-shadow: 0 1px 0 rgba(0,0,0, 0.5) !important;
+    background-color: rgb(30,30,30) !important;
+    border: 1px solid black !important;
+}
+
+#questions.assessment_results .question .header{
+	background-color: rgb(30,30,30) !important;
+}
+
+.question .header{
+	border-bottom: 1px solid black !important;
+}
+
+.question{
+	border: 1px solid black !important;
+    background-color: rgb(60,60,60) !important;
+}
+
+.calendar .fc-view-month .fc-widget-header, #calendar-drag-and-drop-container .fc-view-month .fc-widget-header{
+	color:white	 !important;
+}
+
+#calendar-app .fc-view-month tbody, #calendar-drag-and-drop-container .fc-view-month tbody{
+	background-color: rgb(40,40,44) !important;
+}
+
+#calendar-app .fc-state-highlight, #calendar-drag-and-drop-container .fc-state-highlight{
+	background-color: rgb(60,60,64) !important;
+}
+
+#right-side{
+	background-color: transparent !important;
+}
+
+#minical{
+	background-color: rgb(60,60,60) !important;
+	border: 1px solid black !important;
+	color: white !important;
+}
+
+#minical .fc-header{
+	border-bottom: 1px solid black !important;
+}
+
+.fc-state-default{
+	box-shadow: inset 0 1px 0 rgba(0,0,0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+#minical .fc-widget-content{
+	border: 1px solid black !important;
+}
+
+#minical .fc-other-month{
+	color: white !important;
+}
+
+#minical .event{
+	background-color: rgb(100,100,100) !important;
+}
+
+.fc-grid .fc-other-month .fc-day-number{
+	opacity:1 !important;
+}
+
+#minical .fc-widget-content{
+	color:white !important;
+}
+
+#context-list-holder, #undated-events{
+	background-color: rgb(40,40,40) !important;
+}

@@ -1,0 +1,666 @@
+body{
+	background: rgb(20,20,20);
+}
+
+#header{
+	background: rgb(28, 28, 28);
+	border-bottom: 1px solid black;
+}
+
+#identity{
+	background: rgb(51, 51, 51);
+	box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+#right-side{
+	color:white;
+}
+
+#right-side h2, #right-side .h2 {
+	color: rgb(220, 220, 220);
+}
+
+a,
+.right-side-list li em,
+.stream_header,
+.list-view a,
+.stream-details tr,
+.menu-item .menu-item-drop li,
+.course_details tr td
+{
+	transition: all 0.3s;
+}
+
+a{
+	color: rgb(20, 176, 255);
+}
+
+a:hover{
+	color: rgb(40, 196, 255);
+}
+
+.right-side-list li em{
+	color: rgb(210, 210, 210);
+}
+
+.right-side-list li a:hover em,
+.right-side-list li a:focus em
+{
+	color: rgb(220, 220, 220);
+}
+
+.standalone-icon:before{
+	color: rgb(40, 196, 255);
+}
+
+#main{
+	color:white;
+	background: rgb(60, 60, 60);
+	border:none;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.stream_header:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.stream_header:active{
+	background: rgba(0,0,0,0.15);
+}
+
+.stream_header + .details_container{
+	transition: all 0.6s;
+	display: block !important;
+	overflow:hidden;
+	height:0px;
+}
+
+.recent_activity .image-block-image i:before{
+	color: white;
+}
+
+#breadcrumbs {
+    border-bottom: 1px solid black;
+    background-color: rgb(40,40,40);
+}
+
+.list-view>header, .list-view #section-tabs-header{
+	color: white;
+    background: rgb(80,80,80);
+    box-shadow: none;
+    border-bottom: 1px solid black;
+}
+
+.list-view>header:hover, .list-view>header:active, .list-view>header.active, .list-view>header.disabled, .list-view>header[disabled], .list-view #section-tabs-header:hover, .list-view #section-tabs-header:active, .list-view #section-tabs-header.active, .list-view #section-tabs-header.disabled, .list-view #section-tabs-header[disabled]{
+	color: white;
+    background: rgb(80,80,80);
+}
+
+.list-view a.active{
+    background: rgb(60,60,60);
+    color: white;
+}
+
+.list-view a.active:hover{
+    background: rgb(80,80,80);
+    color: white;
+}
+
+.list-view a:hover{
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.list-view>ul>li>a, .list-view>nav>ul>li>a{
+	color: rgba(255,255,255,0.5);
+}
+
+.list-view>ul>li>a:hover, .list-view>nav>ul>li>a:hover{
+	background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.stream-details tr:hover{
+	background: rgba(255,255,255,0.1);
+}
+
+.stream-details tr a{
+	outline:0;
+}
+
+#wrapper-container{
+	overflow:visible;
+}
+
+.close.ignore-item{
+	animation: none;
+}
+
+.close {
+    opacity: 0;
+    transition: opacity 0.3s;
+    color:white;
+}
+
+.close:hover{
+	opacity:0.9;
+	color:white;
+}
+
+.toggle-details{
+	transition: none;
+}
+
+.right-side-list.to-do-list li a.disable_item_link{
+	color:white;
+}
+
+.right-side-list.to-do-list li:hover a.disable_item_link{
+	color:rgba(255,255,255,0.8);
+}
+
+#header-logo{
+	filter: grayscale(100%);
+}
+
+#header-logo:hover{
+	transform: scale(1.1, 1.1);
+	filter: grayscale(0%);
+}
+
+#header-logo:active{
+	transition: all 0.1s;
+	transform: scale(0.9, 0.9);
+}
+
+.menu-item .menu-item-drop{
+	background: rgb(100,100,100);
+	color:white;
+	left: 0;
+	height: 0px;
+	transition: height 0.3s;
+}
+
+.menu-item.hover .menu-item-title,
+.menu-item.hover-pending .menu-item-title{
+	background: rgb(100,100,100);
+	color:white;
+}
+
+.menu-item .menu-item-drop .menu-item-drop-column .menu-item-heading{
+	color:white;
+}
+
+#menu_enrollments .customListOpen{
+	color: rgb(20, 176, 255);
+}
+
+.menu-item .menu-item-drop li .name{
+	color: rgb(40, 196, 255);
+}
+
+.menu-item .menu-item-drop li:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.menu-item .menu-item-drop li:active {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.menu-item .menu-item-drop li .secondary-right,
+.menu-item .menu-item-drop li .subtitle,
+.menu-item .menu-item-drop li:hover .secondary-right,
+.menu-item .menu-item-drop li:hover .subtitle
+{
+	color: rgba(255,255,255,0.89);
+}
+
+strong{
+	color:rgb(210,210,210);
+}
+
+.course_details tr:hover td {
+	background:rgba(255,255,255,0.1);
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"], input[type="month"],
+input[type="time"], input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+.uneditable-input{
+	background-color: rgb(30,30,30);
+    border: 1px solid black;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.75);
+}
+
+select{
+	color:rgb(240,240,240);
+}
+
+.btn,
+.ui-button{
+	color: rgb(240,240,240);
+    text-shadow: none;
+    background-color: rgb(20,20,20);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(60,60,60)), to(rgb(20,20,20)));
+    background-image: -webkit-linear-gradient(top, rgb(60,60,60), rgb(20,20,20));
+    background-image: linear-gradient(to bottom, rgb(60,60,60), rgb(20,20,20));
+}
+
+.btn.active, .active.ui-button, .btn:active, .ui-button:active, .ui-button.ui-state-active, .ui-progressbar .ui-button.ui-widget-header, .ui-button.ui-state-disabled{
+	background-color: rgb(20,20,20);
+}
+
+.btn:hover, .ui-button:hover, .ui-button.ui-state-hover{
+	color: rgb(255,255,255);
+	background-color: rgb(20,20,20);
+	background-position: 0 -30px;
+}
+
+.discussionTopicIndexList .discussion-topic:nth-child(odd) {
+	background: rgb(50,50,50);
+}
+
+.discussionTopicIndexList .discussion-topic:nth-child(odd):hover{
+	background: rgb(65,65,65);
+}
+
+.discussionTopicIndexList .discussion-topic{
+	box-shadow: 0 0 12px rgba(0,0,0,0.3) inset;
+	background: rgb(60,60,60);
+	border-top: 1px solid rgb(30,30,30);
+	transition: all 0.3s;
+}
+
+.discussionTopicIndexList .discussion-topic:hover{
+	background: rgb(75,75,75);
+}
+
+
+.discussion-pubdate, .discussionTopicIndexList .discussion-summary, .discussionTopicIndexList .discussion-unread-container, .discussionTopicIndexList .discussion-last-reply, .discussionTopicIndexList .discussion-info-icons{
+	color: rgb(210,210,210);
+}
+
+.toolbarView,
+.topic .entry-content{
+	background: none;
+}
+
+.toolbarView .headerBar{
+	border-bottom: solid 1px black;
+    min-height: 57px;
+}
+
+.toolbarView#discussion-toolbar .headerBar {
+    background: rgb(50,50,50);
+    border-top: 1px solid black;
+}
+
+.discussion-section a {
+    color: rgb(20, 176, 255);
+}
+
+.discussion_entry>.discussion-entry-reply-area{
+	border: 1px solid rgb(20,20,20);
+}
+
+table.course-list-table .course-list-table-row{
+	background-color: rgb(50,50,50);
+	transition: all 0.3s;
+}
+
+table.course-list-table .course-list-table-row:hover{
+	background-color: rgba(255,255,255,0.1);
+}
+
+.table-bordered th, .table-bordered td{
+	border-left: 1px solid rgba(0,0,0,0.4);
+}
+
+.table-bordered{
+	border: 1px solid black;
+}
+
+.table th, .table td {
+	border-top: 1px solid black;
+}
+
+table.course-list-table td.course-list-star-column {
+	text-shadow: none;
+	cursor: pointer;
+}
+
+.discussion-entry-reply-area{
+	background: rgb(50,50,50);
+}
+
+.discussion-reply-box{
+	border: 1px solid black;
+	background-color: rgb(20,20,20);
+}
+
+.defaultSkin table.mceLayout tr.mceFirst td.mceToolbar,
+.defaultSkin table.mceLayout td.mceIframeContainer
+{
+	border: 1px solid black;
+}
+
+iframe #tinymce{
+	background: rgb(20,20,20);
+}
+
+.discussion_entry{
+	background: rgb(40,40,40);
+}
+
+.discussion-entries .entry{
+	background: rgb(30,30,30);
+	border: 1px solid black;
+	box-shadow: 0px 1px 0px rgb(40,40,40);
+}
+
+.entry>.bottom-reply-with-box .discussion-entry-reply-area{
+	border-top: 1px solid black;
+}
+
+.topic>.discussion-entry-reply-area{
+	margin:10px;
+}
+
+.read .discussion-read-state {
+    background: rgb(40,40,40);
+}
+
+.header-bar,
+.item-group-container{
+	background-color: rgb(60,60,60);
+	border: none;
+}
+
+.item-group-container .item-group-condensed{
+	border-bottom: 1px dashed rgb(40,40,40);
+}
+
+.item-group-condensed .ig-list li:first-child .ig-row, .item-group-condensed .ig-list li:first-of-type .ig-row, .item-group-condensed .first_visible .ig-row{
+	border-top: 1px solid black;
+}
+
+.item-group-condensed .ig-list li:last-child .ig-row, .item-group-condensed .ig-list li:last-of-type .ig-row, .item-group-condensed .last_visible .ig-row{
+	border-bottom: 1px solid black;
+}
+
+.item-group-condensed .ig-row{
+	border-bottom: 1px solid black;
+	background: rgb(40,40,40);
+}
+
+.ig-list .ig-row a.ig-title{
+	color:white;
+}
+
+.ig-list .ig-row{
+	border-left: 1px solid black;
+	box-shadow: 0 1px 0 rgb(70,70,70);
+}
+
+.ig-list .ig-row:hover{
+	background: rgba(255,255,255,0.1);
+	transition: all 0.3s;
+}
+
+body.with_item_groups #main{
+	background-color: rgb(60,60,60);
+}
+
+#grades_summary thead th{
+	background-color: rgb(30,30,30);
+}
+
+#grades_summary tr>*{
+	transition: all 0.3s;
+	background-color: rgb(50,50,50);
+	border-top: 2px solid rgb(25,25,25);
+}
+
+#grades_summary tr.assignment_graded>*{
+	background-color: rgb(60,60,60);
+}
+
+#grades_summary tr.editable:hover>*{
+	background-color: rgb(65,65,65);
+}
+
+#grades_summary tr.assignment_graded:hover>*{
+	background-color: rgb(75,75,75);
+}
+
+#grades_summary tr.group_total td, #grades_summary tr.group_total th[scope=row]{
+	background-color: rgb(40,40,40);
+}
+
+#grades_summary tr.final_grade>*{
+	background-color: rgb(30,30,30);
+}
+
+#grades_summary{
+	border-bottom:1px solid black;
+}
+
+table.summary thead th, table.summary caption{
+	background-color: rgb(30,30,30);
+	border-top: 1px solid black;
+}
+
+#right-side table.summary td, #right-side table.summary tbody th{
+	background-color: rgb(70,70,70);
+    color: white;
+}
+
+table.summary td, table.summary tbody th{
+	border-top: 1px solid rgb(40,40,40);
+}
+
+.discussion-collections{
+	background: none;
+}
+
+.discussion-list{
+	box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+	border-bottom: 2px dashed rgb(30,30,30);
+}
+
+.discussion{
+	background: rgb(35,35,35);
+	border:1px solid black;
+	transition: all 0.3s;
+}
+
+.discussion:hover{
+	background: rgb(55,55,55);
+}
+
+.item-group{
+	background-color: rgb(50,50,50);
+}
+
+.discussion{
+	color: white;
+}
+
+.discussion-entries .entry .entry{
+	border-top: solid 1px rgb(20,20,20);
+}
+
+#content h2{
+	color:white;
+}
+
+#newlogo{
+	position: absolute;
+	bottom:11px;
+	width:135px;
+	height:26px;
+	right:26px;
+	overflow: hidden;
+}
+
+#vid{
+	width:136px;
+	height: 144px;
+	position: relative;
+    top: -59px;
+}
+
+#group_categories_tabs>.tab-panel{
+	border-top: 1px solid black;
+}
+
+.ui-tabs .ui-tabs-panel{
+	background: rgb(60,60,60);
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+	background: rgb(60,60,60);
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a{
+	color: white;
+}
+
+.ui-tabs .ui-tabs-nav li a{
+	text-shadow: 0 1px 0 rgba(0,0,0, 0.5);
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+	border-color:black;
+}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited{
+	color:white;
+}
+
+.ui-state-default, .ui-widget-header .ui-state-default{
+	border: 1px solid black;
+	background-image: -webkit-linear-gradient(top, rgb(40,40,40), rgb(30,30,30));
+    background-image: linear-gradient(to bottom, rgb(40,40,40), rgb(30,30,30));
+    box-shadow: inset 0 1px 0 rgba(0,0,0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ui-widget-content{
+	color:white;
+}
+
+.table-striped,
+.table-striped>thead{
+	border: 1px solid black;
+}
+
+.table>thead{
+	background: rgb(30,30,30);
+}
+
+.table-striped>tbody>tr td{
+	background: rgb(50,50,50);
+}
+
+.table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th{
+	background: rgb(40,40,40);
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th, .table-hover tbody tr.table-hover-row td, .table-hover tbody tr.table-hover-row th{
+	background: rgb(60,60,60);
+	transition: all 0.3s;
+}
+
+#files_structure,
+#files_content{
+	border: 1px solid black;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+}
+
+ul.instTree li.node.active-node>.text{
+	background-color: rgb(30,30,30);
+    padding: 5px;
+}
+
+.content_panel{
+	border-bottom: 1px solid black;
+	background-color: rgb(30,30,30);
+}
+
+.files_content .folder_item,
+ul.instTree li.node>.text{
+	transition: all 0.3s;
+}
+
+ul.instTree li.leaf:hover,
+ul.instTree li.node>.text:hover, ul.instTree li li:focus,
+.files_content .folder_item.folder_item_hover{
+	background-color: rgb(45,45,45);
+}
+
+#syllabus thead th{
+	background: rgb(20,20,20);
+	border-bottom: 1px solid black;
+}
+#syllabus tr.date table.detail_list td.not_last,
+#syllabus tr.date.date_passed td, #syllabus tr.date.date_passed th{
+	background-color: rgb(40,40,40);
+	border-bottom: 1px solid black;
+}
+
+#syllabus tr.date td, #syllabus tr.date th,
+#syllabus tr.date td.details .dates{
+	color:white;
+}
+
+.mini-cal-header{
+	background: rgb(40,40,40);
+    border-radius: 3px;
+}
+
+.toolbar{
+	border: 1px solid black;
+	background-image: -webkit-linear-gradient(top, rgb(50,50,50), rgb(40,40,40));
+    background-image: linear-gradient(to bottom, rgb(50,50,50), rgb(40,40,40));
+    box-shadow: inset 0 1px 0 rgba(0,0,0, 0.75);
+}
+
+.quiz-header{
+	border-bottom: 1px solid black;
+}
+
+.quiz-submission, .question_editing{
+	background: rgb(40,40,40);
+    border: 1px solid black;
+}
+
+.alert{
+	text-shadow: 0 1px 0 rgba(0,0,0, 0.5);
+    background-color: rgb(30,30,30);
+    border: 1px solid black;
+}
+
+#questions.assessment_results .question .header{
+	background-color: rgb(30,30,30);
+}
+
+.question .header{
+	border-bottom: 1px solid black;
+}
+
+.question{
+	border: 1px solid black;
+    background-color: rgb(60,60,60);
+}

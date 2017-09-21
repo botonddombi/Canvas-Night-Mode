@@ -1,0 +1,42 @@
+#changealert{
+	position: fixed;
+	top: 20px;
+	left: calc(50% - 100px);
+	width: 200px;
+	height: 100px;
+	background: white;
+	z-index: 1000;
+	border-radius: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 12px;
+	box-shadow: 0 0 15px rgba(0,0,0,.4);
+	transition: left 0.3s;
+}
+
+#changealert-close-wrapper{
+	top: -18px;
+    right: 18px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+}
+
+#changealert-close{
+	width:36px;
+	height:36px;
+	background-image: url('../art/x.png');
+	background-size: cover;
+
+	transition: all 0.5s;
+}
+
+#changealert-close:hover{
+	cursor: pointer;
+	transform: rotate(180deg);
+}
+
+#changealert-close:active{
+	transition: all 0.1s;
+	transform: scale(0.8, 0.8) rotate(180deg);
+}

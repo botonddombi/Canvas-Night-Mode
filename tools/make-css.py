@@ -1,0 +1,7 @@
+f = open("canvas.css","r+")
+g = open("canvas-old.css", "w")
+string = f.read()
+rep = string.replace(";", " !important;").replace('!important !important', '!important')
+g.write(string)
+f.seek(0)
+f.write(rep)
