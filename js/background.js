@@ -188,8 +188,8 @@ var Background = (function(){
 					if(userdata.courses[i].id != oldUserdata.courses[i].id){
 						throw "Array items are different.";
 					}
-					
-					
+
+
 				}
 			}
 		}
@@ -267,12 +267,20 @@ var Background = (function(){
 
 	var getGrades = function(course){
 		var tmp = {data : 0};
-		getUrl(tmp, "https://canvas.cs.ubbcluj.ro/courses/" + course);
+		getUrl(tmp, "https://canvas.cs.ubbcluj.ro/courses/" + course.id);
+		var grades = tmp.data.match(/"submissions":[0-9]*/);
+		grades = grades ? grades[0].split(':')[1] : 0;
+		console.log('There are ' + grades  + ' grade(s) is ' + course.name + '.');
 
-		grade = 0;
+		return grades;
+	}
 
-
-	}	
+	var getGradesAll = function(){
+		userdata.coursesGrades = [];
+		userdata.courses.forEach(function(val){
+			userdata.coursesGrades.push(getGrades(val));
+		});
+	}
 
 	var getCourses = function(){
 		var tmp = {data : 0};
@@ -361,12 +369,15 @@ var Background = (function(){
 
 	var beginRefreshData = function(){
 		oldUserdata = Object.assign({}, userdata);
+		getCourses();
 		getDashboardInfo();
+		getGradesAll();
 	}
 
 	var beginResetData = function(){
 		getCourses();
 		getDashboardInfo();
+		getGradesAll();
 	}
 
 	var resetData = function(){
@@ -438,7 +449,8 @@ var Background = (function(){
 
 	return {
 		init : initialize,
-		notif : notification
+		getCourses : getCourses,
+		getGrades : getGrades
 	};
 
 })();
