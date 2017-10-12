@@ -60,7 +60,7 @@ var Background = (function(){
 				chrome.notifications.create(
 					randId,
 					{
-						'type': "list",
+						'type': list ? "list" : "basic",
 						'iconUrl': 'art/logo.png',
 						'title': title,
 						'message': message,
@@ -85,118 +85,127 @@ var Background = (function(){
 	}
 
 	var pushNotifications = function(){
-		var diff = oldUserdata.assignments - userdata.assignments;
-		if(diff != 0 && savedVariables.assignments.length){
-			if(diff > 0){
-				console.log("Something unusual happened (assignments). %s < %s", userdata.assignments, oldUserdata.assignments);
-			}
-			else{
-				diff *= -1;
-
-				var first = savedVariables.assignments[0].name;
-				var count = 1;
-				var list = new Array();
-				list.push({title: first, message: savedVariables.assignments[0].title});
-				for(let i = 1; i < diff; i++){
-					if(savedVariables.assignments[i].name == first){
-						count++;
-					}
-					var listItem = {};
-					listItem.title = savedVariables.assignments[i].name;
-					listItem.message = savedVariables.assignments[i].title;
-					list.push(listItem);
-				}
-
-				var title;
-				if(count > 1){
-					title = "You have " + count + " new assignments in " + first;
-					more = diff - count;
-					if(more != 0){
-						title += " and " + more + " more in others.";
-					}
-					else{
-						title += ".";
-					}
+		if(oldUserdata){
+			var diff = oldUserdata.assignments - userdata.assignments;
+			if(diff != 0 && savedVariables.assignments.length){
+				if(diff > 0){
+					console.log("Something unusual happened (assignments). %s < %s", userdata.assignments, oldUserdata.assignments);
 				}
 				else{
-					title = "You have a new assignment in " + first + ".";
-				}
+					diff *= -1;
 
-				notification(
-					title,
-					"You have " + diff + " new assignment notifications. Click here to see them!",
-					true,
-					"https://canvas.cs.ubbcluj.ro/",
-					list
-				);
-			}
-		}
-
-		var diff = oldUserdata.announcements - userdata.announcements;
-		if(diff != 0 && savedVariables.announcements.length){
-			if(diff > 0){
-				console.log("Something unusual happened (announcements). %s < %s", userdata.announcements, oldUserdata.announcements);
-			}
-			else{
-				diff *= -1;
-
-				var first = savedVariables.announcements[0].name;
-				var count = 1;
-				var list = new Array();
-				list.push({title: first, message: savedVariables.announcements[0].title});
-				for(let i = 1; i < diff; i++){
-					if(savedVariables.announcements[i].name == first){
-						count++;
+					var first = savedVariables.assignments[0].name;
+					var count = 1;
+					var list = new Array();
+					list.push({title: first, message: savedVariables.assignments[0].title});
+					for(let i = 1; i < diff; i++){
+						if(savedVariables.assignments[i].name == first){
+							count++;
+						}
+						var listItem = {};
+						listItem.title = savedVariables.assignments[i].name;
+						listItem.message = savedVariables.assignments[i].title;
+						list.push(listItem);
 					}
-					var listItem = {};
-					listItem.title = savedVariables.announcements[i].name;
-					listItem.message = savedVariables.announcements[i].title;
-					list.push(listItem);
-				}
 
-				var title;
-				if(count > 1){
-					title = "You have " + count + " new announcements in " + first;
-					more = diff - count;
-					if(more != 0){
-						title += " and " + more + " other.";
+					var title;
+					if(count > 1){
+						title = "You have " + count + " new assignments in " + first;
+						more = diff - count;
+						if(more != 0){
+							title += " and " + more + " more in others.";
+						}
+						else{
+							title += ".";
+						}
 					}
 					else{
-						title += ".";
+						title = "You have a new assignment in " + first + ".";
 					}
+
+					notification(
+						title,
+						"You have " + diff + " new assignment notifications. Click here to see them!",
+						true,
+						"https://canvas.cs.ubbcluj.ro/",
+						list
+					);
+				}
+			}
+
+			var diff = oldUserdata.announcements - userdata.announcements;
+			if(diff != 0 && savedVariables.announcements.length){
+				if(diff > 0){
+					console.log("Something unusual happened (announcements). %s < %s", userdata.announcements, oldUserdata.announcements);
 				}
 				else{
-					title = "You have a new announcement in " + first + ".";
-				}
+					diff *= -1;
 
-				notification(
-					title,
-					"You have " + diff + " announcements. Click here to see them!",
-					true,
-					"https://canvas.cs.ubbcluj.ro/",
-					list
-				);
-			}
-		}
-
-		try{
-			if(userdata.courses.length != oldUserdata.courses.length){
-				throw "Length is not the same.";
-			}
-			else{
-				for(i = 0; i < userdata.courses.length; i++){
-					if(userdata.courses[i].id != oldUserdata.courses[i].id){
-						throw "Array items are different.";
+					var first = savedVariables.announcements[0].name;
+					var count = 1;
+					var list = new Array();
+					list.push({title: first, message: savedVariables.announcements[0].title});
+					for(let i = 1; i < diff; i++){
+						if(savedVariables.announcements[i].name == first){
+							count++;
+						}
+						var listItem = {};
+						listItem.title = savedVariables.announcements[i].name;
+						listItem.message = savedVariables.announcements[i].title;
+						list.push(listItem);
 					}
 
+					var title;
+					if(count > 1){
+						title = "You have " + count + " new announcements in " + first;
+						more = diff - count;
+						if(more != 0){
+							title += " and " + more + " other.";
+						}
+						else{
+							title += ".";
+						}
+					}
+					else{
+						title = "You have a new announcement in " + first + ".";
+					}
 
+					notification(
+						title,
+						"You have " + diff + " announcements. Click here to see them!",
+						true,
+						"https://canvas.cs.ubbcluj.ro/",
+						list
+					);
 				}
 			}
-		}
-		catch(err){
-			console.log("Something unusual happened (courses): %s", err);
-		}
 
+			try{
+				if(userdata.courses.length != oldUserdata.courses.length){
+					throw "Length is not the same.";
+				}
+				else{
+					for(i = 0; i < userdata.courses.length; i++){
+						if(userdata.courses[i].id != oldUserdata.courses[i].id){
+							throw "Array items are different.";
+						}
+
+						if(userdata.coursesGrades[i] > oldUserdata.coursesGrades[i]){
+							notification(
+								"You have " + (userdata.coursesGrades[i] - oldUserdata.coursesGrades[i]) + " new grades in " + userdata.courses[i].name.replace(/&amp;/g, '&') + ".",
+								"Click here to see them!",
+								true,
+								"https://canvas.cs.ubbcluj.ro/courses/" +  userdata.courses[i].id + "/grades"
+							);
+						}
+
+					}
+				}
+			}
+			catch(err){
+				console.log("Something unusual happened (courses): %s", err);
+			}
+		}
 	}
 
 	var setUserData = function(){
@@ -401,8 +410,8 @@ var Background = (function(){
 		console.log("Refreshing data.");
 		try{
 			beginRefreshData();
-			pushNotifications();
 			setUserData();
+			pushNotifications();
 		}
 		catch(e){
 			console.log("Error(%s) while trying to refresh data.", e);
@@ -447,10 +456,17 @@ var Background = (function(){
 		});
 	}
 
+	var reset = function(){
+		chrome.storage.sync.set({'userdata' : null});
+		chrome.storage.sync.get(['userdata'], function( obj ){
+			console.log(obj);
+		});
+	}
+
 	return {
 		init : initialize,
-		getCourses : getCourses,
-		getGrades : getGrades
+		reset : reset,
+		refreshData : refreshData
 	};
 
 })();
