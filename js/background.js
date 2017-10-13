@@ -23,6 +23,7 @@ var Background = (function(){
 
 	var animateIn = function(){
 		frame = 0;
+		clearInterval(frameInterval);
 		frameInterval = setInterval(function(){
 			frame++;
 			if(frame > 81){
@@ -34,6 +35,7 @@ var Background = (function(){
 	}
 
 	var animateOut = function(){
+		clearInterval(frameInterval);
 		frameInterval = setInterval(function(){
 			frame--;
 			if(frame < 1){
