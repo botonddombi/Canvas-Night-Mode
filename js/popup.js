@@ -8,13 +8,29 @@ function shade( p ){
 	}
 }
 
-chrome.storage.sync.get(['nightmode', 'notifications', 'sound'], function( obj ){
+chrome.storage.sync.get(['nightmode', 'notifications', 'sound', 'types', 'userdata'], function( obj ){
 	shade(obj.nightmode);
 	if(obj.notifications){
 		$('.notifications').addClass('on');
-		$('.sound').show();
+		$('.notif').show();
 	}
+	$('.notification-type option[value="' + obj.types + '"]').attr('selected', true).change();
 	$('.notification-sound option[value="' + obj.sound + '"]').attr('selected', true);
+	if(obj.userdata.courses){
+		obj.userdata.courses.forEach(function(val, i){
+			$('.grades ul').append('<li courseid="' + val.id + '" ' + (parseInt(obj.userdata.coursesGrades[i]) ? 'check' : 'empty')  + '>' + (val.id + ' - ' + val.name) + '</li>');
+		});
+
+		$('.grades li').click(function(){
+			chrome.tabs.create({
+				'url': 'https://canvas.cs.ubbcluj.ro/courses/' + $(this).attr('courseid'),
+				'active': true, 
+			});
+		});
+	}
+	else{
+		$('.course-notice').html('There are no favourite courses! Add them');
+	}
 });
 
 $('.switch').click(function(){
@@ -30,8 +46,8 @@ $('.nightmode').click(function(){
 $('.notifications').click(function(){
 	let notif = $(this).hasClass('on');
 	chrome.storage.sync.set({'notifications': notif});
-	if(notif) $('.sound').show();
-	else $('.sound').hide();
+	if(notif) $('.notif').show();
+	else $('.notif').hide();
 });
 
 [
@@ -51,4 +67,22 @@ $('.notification-sound').change(function(){
 	audio.src = '../art/' + $(this).val();
 	audio.play();
 	chrome.storage.sync.set({'sound': $(this).val()});
+});
+
+$('.notification-type').change(function(){
+	let val = parseInt($(this).val());
+	chrome.storage.sync.set({'types': val});
+	if(val != 1){
+		$('.grades').show();
+	}
+	else{
+		$('.grades').hide();
+	}
+});
+
+$('.courses').click(function(){
+	chrome.tabs.create({
+		'url': 'https://canvas.cs.ubbcluj.ro/courses',
+		'active': true, 
+	});
 });

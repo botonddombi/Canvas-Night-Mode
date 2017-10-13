@@ -1,6 +1,5 @@
 body{
 	width:240px;
-	height:140px;
 	background:rgb(30,30,30);
 	color:rgb(245,245,245);
 	padding:10px;
@@ -23,6 +22,10 @@ label{
 	margin-right:10px;
 }
 
+.notif.type label{
+	margin-right: 14px;
+}
+
 .switch{
 	width:30px;
 	height: 12px;
@@ -32,7 +35,7 @@ label{
 	cursor: pointer;
 }
 
-.sound{
+.notif{
 	display: none;
 }
 
@@ -62,4 +65,58 @@ body:not(.lightmode) select{
 
 .switch.on div{
 	left:18px;
+}
+
+.grades{
+	color:rgba(255,255,255,.8);
+	font-size:11px;
+	margin-top: 5px;
+}
+
+@keyframes glow{
+	0%{
+		color: #1D59FF
+	}
+	50%{
+		color: #58B4FF
+	}
+	100%{
+		color: #1D59FF
+	}
+}
+
+.grades ul{
+	list-style: none;
+}
+
+.grades li[check]{
+	animation: glow 3s infinite;
+}
+
+.grades li:hover{
+	cursor: pointer;
+	color:white;
+}
+
+.grades li:before {
+    content: "\2605";
+    padding-right: 8px;
+	color: yellow;
+	text-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+
+.grades ul{
+	padding:0;
+	margin: 3px 0;
+}
+
+.courses{
+	cursor: pointer;
+	color:#1573FF;
+}
+
+.courses:hover{
+	text-decoration: underline;
+	color:#1538FF;
 }

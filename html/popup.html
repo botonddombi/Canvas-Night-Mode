@@ -14,9 +14,23 @@
 			<label for="notif">Notifications:</label>
 			<div class="switch notifications"><div></div></div>
 		</div>
-		<div class="option sound">
+		<div class="option notif sound">
 			<label for="notif-sound">Notification sound:</label>
 			<select class="notification-sound"></select>
+		</div>
+		<div class="option notif type">
+			<label for="notif-type">Notification types:</label>
+			<select class="notification-type">
+				<option value="0">All</option>
+				<option value="1">Assignments & announcements only</option>
+				<option value="2">Grades only</option>
+			</select>
+		</div>
+		<div class="notif grades">
+			<label>Courses tracked:</label>
+			<ul>
+			</ul>
+			<label><span class="course-notice">Your favourite courses are listed above. Change them</span> <span class="courses">here</span>.</label>
 		</div>
 	</div>
 </body>
