@@ -114,6 +114,8 @@ var Canvas = (function(){
 					}
 				});
 
+				//Video logo
+
 				var video = document.createElement('video');
 				video.src = chrome.extension.getURL('art/lg.mp4');
 				video.load();

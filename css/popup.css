@@ -7,7 +7,7 @@ body{
 }
 
 body.lightmode{
-	background: none;
+	background: rgb(240,240,240);
 	color:black;
 }
 
@@ -19,11 +19,6 @@ body.lightmode{
 
 label{
 	min-width:60px;
-	margin-right:10px;
-}
-
-.notif.type label{
-	margin-right: 14px;
 }
 
 .switch{
@@ -40,12 +35,17 @@ label{
 }
 
 select{
+	float:right;
 	width:123px;
 }
 
 body:not(.lightmode) select{
 	background:rgb(40,40,40);
 	color:white;
+}
+
+.switch{
+	margin-left:10px;
 }
 
 .switch div{
@@ -68,9 +68,14 @@ body:not(.lightmode) select{
 }
 
 .grades{
-	color:rgba(255,255,255,.8);
+	transition: all 0.3s;
+	color:rgba(255,255,255,.8);	
 	font-size:11px;
 	margin-top: 5px;
+}
+
+body.lightmode .grades{
+	color:rgba(0,0,0,.8);	
 }
 
 @keyframes glow{
@@ -96,6 +101,10 @@ body:not(.lightmode) select{
 .grades li:hover{
 	cursor: pointer;
 	color:white;
+}
+
+body.lightmode .grades li:hover{
+	color: rgb(0,0,0);
 }
 
 .grades li:before {

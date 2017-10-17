@@ -57,13 +57,14 @@ var Background = (function(){
 
 				var randId = "Notif" + Math.floor(Math.random() * 100000000);
 
+				
 				chrome.notifications.create(
 					randId,
 					{
 						'type': list ? "list" : "basic",
 						'iconUrl': 'art/' + (grades ? 'logo_blue.png' : 'logo.png'),
-						'title': title,
-						'message': message,
+						'title': $('<div/>').html(title).text(),
+						'message': $('<div/>').html(message).text(),
 						'requireInteraction': stay,
 						'items' : list,
 					},
@@ -106,8 +107,8 @@ var Background = (function(){
 									count++;
 								}
 								var listItem = {};
-								listItem.title = savedVariables.assignments[i].name;
-								listItem.message = savedVariables.assignments[i].title;
+								listItem.title = $('<div/>').html(savedVariables.assignments[i].name).text();
+								listItem.message = $('<div/>').html(savedVariables.assignments[i].title).text();
 								list.push(listItem);
 							}
 
@@ -153,8 +154,8 @@ var Background = (function(){
 									count++;
 								}
 								var listItem = {};
-								listItem.title = savedVariables.announcements[i].name;
-								listItem.message = savedVariables.announcements[i].title;
+								listItem.title = $('<div/>').html(savedVariables.announcements[i].name).text();
+								listItem.message = $('<div/>').html(savedVariables.announcements[i].title).text();
 								list.push(listItem);
 							}
 
@@ -315,7 +316,7 @@ var Background = (function(){
 		for(let i = 0; i < coursesContent.length; i++){
 			var coursesItem = {};
 			coursesItem.id = coursesContent[i].split('data-course-id=')[1].trim().match(/\d+/)[0];
-			coursesItem.name = coursesContent[i].split('title="')[2].trim().slice(0,-2);
+			coursesItem.name = $('<div/>').html(coursesContent[i].split('title="')[2].trim().slice(0,-2)).text();
 			courses.push(coursesItem);
 		}
 
@@ -486,6 +487,7 @@ var Background = (function(){
 		init : initialize,
 		reset : reset,
 		refreshData : refreshData,
+		push : pushNotifications,
 		notification : notification
 	};
 
