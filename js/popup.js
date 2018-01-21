@@ -51,20 +51,22 @@ $('.notifications').click(function(){
 });
 
 [
-	'Default.mp3',
-	'Wubba-lubba-dub-dub.mp3',
-	'Omae-wa-mou-shindeiru.mp3',
-	'My-name-is-Jeff.mp3',
-	'Windows-XP.mp3'
+	'default.mp3',
+	'wubba-lubba-dub-dub.mp3',
+	'omae-wa-mou-shindeiru.mp3',
+	'my-name-is-jeff.mp3',
+	'windows-xp.mp3',
+	'somebody-toucha-my-spaghette.mp3',
+	'skrattar-du-forlorar-du-mannen.mp3'
 ].forEach(function(val){
-	$('.notification-sound').append('<option value="' + val + '">' + val.split('.')[0] + '</option>');
+	$('.notification-sound').append('<option value="' + val + '">' + val.split('.')[0].replace(/\b\w/g, l => l.toUpperCase()).replace(/\-/g, ' ') + '</option>');
 });
 
 var audio;
 $('.notification-sound').change(function(){
 	if(audio)audio.pause();
 	audio = new Audio();
-	audio.src = '../art/' + $(this).val();
+	audio.src = '../art/sound/' + $(this).val();
 	audio.play();
 	chrome.storage.sync.set({'sound': $(this).val()});
 });

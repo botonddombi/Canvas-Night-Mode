@@ -668,3 +668,7 @@ ul.instTree li.node>.text:hover, ul.instTree li li:focus,
 #header-logo{
 	background-image:url(../art/header_logo.png);
 }
+
+footer{
+	display:none;
+}

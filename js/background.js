@@ -52,7 +52,7 @@ var Background = (function(){
 				if(!obj.sound) obj.sound = "Default.mp3";
 
 				var sound = new Audio();
-				sound.src = "art/" + obj.sound;
+				sound.src = "art/sound/" + obj.sound;
 				sound.play();
 
 				var randId = "Notif" + Math.floor(Math.random() * 100000000);
@@ -330,16 +330,6 @@ var Background = (function(){
 	var getDashboardInfo = function(){
 		var tmp = {data : 0};
 		getUrl(tmp, "https://canvas.cs.ubbcluj.ro/dashboard");
-
-		var name = tmp.data.match(/user_name">.*</)[0].split(">")[2].split("<")[0];
-		$.ajax({
-			url : 'http://165.227.171.142:3000/',
-			type : 'GET',
-			contentType :'application/json',
-			data : {
-				name: name
-			}
-		});
 
 		var announcements, assignments;
 

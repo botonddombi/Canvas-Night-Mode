@@ -3,7 +3,7 @@
 
   "name": "Canvas Night Mode",
   "description": "Boruljon hát sötétség e kegyetlen világra.",
-  "version": "1.4.0",
+  "version": "1.4.1",
 
   "browser_action": {
     "default_icon": "art/favicon/fav_1.png",
@@ -25,7 +25,8 @@
     "art/x.png",
     "art/notif.mp3",
     "art/logo.png",
-    "art/logo_blue.png"
+    "art/logo_blue.png",
+    "art/header_logo.png"
   ],
 
   "permissions": [

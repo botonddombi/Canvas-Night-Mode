@@ -665,56 +665,6 @@ ul.instTree li.node>.text:hover, ul.instTree li li:focus,
     background-color: rgb(60,60,60) !important;
 }
 
-.calendar .fc-view-month .fc-widget-header, #calendar-drag-and-drop-container .fc-view-month .fc-widget-header{
-	color:white	 !important;
-}
-
-#calendar-app .fc-view-month tbody, #calendar-drag-and-drop-container .fc-view-month tbody{
-	background-color: rgb(40,40,44) !important;
-}
-
-#calendar-app .fc-state-highlight, #calendar-drag-and-drop-container .fc-state-highlight{
-	background-color: rgb(60,60,64) !important;
-}
-
-#right-side{
-	background-color: transparent !important;
-}
-
-#minical{
-	background-color: rgb(60,60,60) !important;
-	border: 1px solid black !important;
-	color: white !important;
-}
-
-#minical .fc-header{
-	border-bottom: 1px solid black !important;
-}
-
-.fc-state-default{
-	box-shadow: inset 0 1px 0 rgba(0,0,0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
-}
-
-#minical .fc-widget-content{
-	border: 1px solid black !important;
-}
-
-#minical .fc-other-month{
-	color: white !important;
-}
-
-#minical .event{
-	background-color: rgb(100,100,100) !important;
-}
-
-.fc-grid .fc-other-month .fc-day-number{
-	opacity:1 !important;
-}
-
-#minical .fc-widget-content{
-	color:white !important;
-}
-
-#context-list-holder, #undated-events{
-	background-color: rgb(40,40,40) !important;
+#header-logo{
+	background-image:url(../art/header_logo.png) !important;
 }
